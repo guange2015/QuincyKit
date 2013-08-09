@@ -11,6 +11,8 @@
 - 在applicationDidFinishLaunching函数中初始化
 
         ```[[BWQuincyManager sharedQuincyManager] setSubmissionURL:@"http://yourserver.url"];```
+
+- yourserver.url请去 http://holdbug.com 免费申请
       
 - 搞定
 
