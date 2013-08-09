@@ -30,6 +30,9 @@
 #import "QuincyDemoAppDelegate.h"
 #import "QuincyDemoViewController.h"
 
+// 到http://holdbug.com/免费申请
+#define REPORT_API_TOKEN @""
+
 @implementation QuincyDemoAppDelegate
 
 @synthesize window;
@@ -42,10 +45,7 @@
 	[window addSubview:viewController.view];
 	[window makeKeyAndVisible];
   
-  // setSubmissionURL for self hosted Example: http://yourserver.com/crash_v200.php
-  // setAppIdentifier for HockeyApp Example: 6463991af4a2da3f9cb320533c83b156
-  //    [[BWQuincyManager sharedQuincyManager] setSubmissionURL:@"http://yourserver.com/crash_v200.php"];
-  //    [[BWQuincyManager sharedQuincyManager] setAppIdentifier:@"6463991af4a2da3f9cb320533c83b156"];
+  [[BWQuincyManager sharedQuincyManager] setSubmissionURL:[NSString stringWithFormat:@"http://holdbug.com/bugs?api_token=%@", REPORT_API_TOKEN]];
   
   [[BWQuincyManager sharedQuincyManager] setDelegate:self];
 }
