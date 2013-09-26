@@ -1,20 +1,32 @@
 # ios 集成指南
 
-- 把 `BWQuincyManager.h`, `BWQuincyManager.m` and `Quincy.bundle` 拖到你现有的工程
-- 把 `CrashReporter.framework` 也拖到工程里面
-- 在工程的Build->"Other Linker Flags"中加入  "-all_load"
-- 在工程中添加 `SystemConfiguration.framework` 
-- 在 `appDelegate.h` 中包含头文件
 
-        ```#import "BWQuincyManager.h"```
+一、 通过[CocoaPods](https://github.com/CocoaPods/CocoaPods)进行安装
+-------
+    
+```pod 'QuincyKit', :git => 'https://github.com/hhuai/QuincyKit.git'```
 
-- 在applicationDidFinishLaunching函数中初始化
 
-        ```[[BWQuincyManager sharedQuincyManager] setSubmissionURL:@"http://yourserver.url"];```
+二、手动安装方式
+------
 
-- yourserver.url请去 http://holdbug.com 免费申请
+1. 把 `BWQuincyManager.h`, `BWQuincyManager.m` and `Quincy.bundle` 拖到你现有的工程
+
+1. 把 `CrashReporter.framework` 也拖到工程里面
+
+3. 在工程的Build->"Other Linker Flags"中加入  "-all_load"
+4. 在工程中添加 `SystemConfiguration.framework` 
+5. 在 `appDelegate.h` 中包含头文件
+
+    ```#import "BWQuincyManager.h"```
+
+6. 在applicationDidFinishLaunching函数中初始化
+
+    ```[[BWQuincyManager sharedQuincyManager] setSubmissionURL:@"http://yourserver.url"];```
+
+  - yourserver.url请去 [holdbug.com](http://holdbug.com) 免费申请
       
-- 搞定
+7. 搞定
 
 
 # 注意
